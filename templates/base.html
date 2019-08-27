@@ -1,0 +1,7 @@
+{% if not request.user.is_authenticated %}
+<li><a href="{% url 'users:login_user' %}">Login</a></li>  
+<li><a href="{% url 'users:signup_user' %}">Registre-se</a></li>
+{% else %}
+Olá,<a href="{% url 'users:about_user' request.user.id %}">{{request.user}}</a>
+<li><a href="{% url 'users:logout_user' %}">Logout</a></li>
+{% endif %} 
