@@ -60,9 +60,11 @@ class ClinicUser(AbstractBaseUser):
     def __str__(self):
         return self.email
 
+
     @property
     def is_staff(self):
         return self.is_admin
+        #aqui estamos conferindo se o usuário é admin
 
 
 class Patient(ClinicUser):
